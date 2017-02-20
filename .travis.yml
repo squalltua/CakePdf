@@ -23,7 +23,7 @@ matrix:
 before_script:
   - sh -c "if [ '$CODECOVERAGE' != '1' ]; then phpenv config-rm xdebug.ini; fi"
 
-  - sudo apt-get install wkhtmltopdf -y
+  - sudo touch /usr/bin/wkhtmltopdf && sudo chmod +x /usr/bin/wkhtmltopdf
   - sudo touch /usr/bin/latexpdf && sudo chmod +x /usr/bin/latexpdf
 
   - composer install --no-interaction
